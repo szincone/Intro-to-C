@@ -10,8 +10,7 @@
 */
 int fizzbuzz(int n)
 {
-    int i;
-    int counter;
+    int i, counter;
     counter = 0;
     for (i = 0; i < n; i++)
     {
