@@ -9,7 +9,22 @@
 */
 int string_length(char *s)
 {
-
+    int length; // initialize length var
+    // char *z;    // initialize copy pointer
+    // z = s;      // copy pointer
+    // first version
+    // for (z = s; *z != '\0'; z++)
+    // {
+    //     printf("HEY %c\n", *z);
+    //     length += 1;
+    // }
+    // second version
+    while (*s != '\0')
+    {
+        s++;
+        length += 1;
+    }
+    return length;
 }
 
 /*
@@ -20,7 +35,6 @@ int string_length(char *s)
 */
 char *reverse_string(char *rv, char *s)
 {
-
 }
 
 #ifndef TESTING
@@ -37,4 +51,3 @@ int main(void)
     return 0;
 }
 #endif
-    
