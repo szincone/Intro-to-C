@@ -10,9 +10,9 @@
 int string_length(char *s)
 {
     int length; // initialize length var
+    // first version
     // char *z;    // initialize copy pointer
     // z = s;      // copy pointer
-    // first version
     // for (z = s; *z != '\0'; z++)
     // {
     //     printf("HEY %c\n", *z);
@@ -22,7 +22,7 @@ int string_length(char *s)
     while (*s != '\0')
     {
         s++;
-        length += 1;
+        length++;
     }
     return length;
 }
@@ -35,6 +35,43 @@ int string_length(char *s)
 */
 char *reverse_string(char *rv, char *s)
 {
+    // get length of string
+    int end = 0;
+    char *z; // initialize copy pointer
+    char *z2;
+    z2 = s;
+    z = s; // copy pointer
+    while (*z != '\0')
+    {
+        // printf("YOOOO=++++%c\n", *s);
+        z++;
+        end++;
+    }
+    // reassign first key to last value
+    // printf("+++++++++++++++++++++++++++++%d\n", end);
+    char *rv_copy;
+    // int i = 0;
+    rv_copy = rv;
+    // rv_copy[0] = 'z';
+    // printf("XXXXXXXXXXXXXXXXXXXXXXXXXXX%c\n", *rv_copy);
+    rv_copy[end + 1] = '\0';
+    while (*z2 != '\0')
+    {
+        // rv_copy[s] = *s;
+        // printf("++++++++++++++++++++%c\n", *z2);
+        end--;
+        rv_copy[end] = *z2;
+        z2++;
+    }
+    // int i = 0;
+    // while (i < 11)
+    // {
+    //     printf(")()())%c\n", rv_copy[i]);
+    //     i++;
+    // }
+    // printf("++++++++++++++++++++%s\n", rv_copy);
+    rv = rv_copy;
+    return rv;
 }
 
 #ifndef TESTING
