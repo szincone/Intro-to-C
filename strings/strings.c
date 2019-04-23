@@ -43,35 +43,21 @@ char *reverse_string(char *rv, char *s)
     z = s; // copy pointer
     while (*z != '\0')
     {
-        // printf("YOOOO=++++%c\n", *s);
         z++;
         end++;
     }
     // reassign first key to last value
-    // printf("+++++++++++++++++++++++++++++%d\n", end);
     char *rv_copy;
-    // int i = 0;
     rv_copy = rv;
-    // rv_copy[0] = 'z';
-    // printf("XXXXXXXXXXXXXXXXXXXXXXXXXXX%c\n", *rv_copy);
     rv_copy[end + 1] = '\0';
     while (*z2 != '\0')
     {
-        // rv_copy[s] = *s;
-        // printf("++++++++++++++++++++%c\n", *z2);
         end--;
         rv_copy[end] = *z2;
         z2++;
     }
-    // int i = 0;
-    // while (i < 11)
-    // {
-    //     printf(")()())%c\n", rv_copy[i]);
-    //     i++;
-    // }
-    // printf("++++++++++++++++++++%s\n", rv_copy);
-    rv = rv_copy;
-    return rv;
+
+    return rv_copy;
 }
 
 #ifndef TESTING
