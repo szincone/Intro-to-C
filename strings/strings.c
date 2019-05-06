@@ -9,7 +9,22 @@
 */
 int string_length(char *s)
 {
-
+    int length; // initialize length var
+    // first version
+    // char *z;    // initialize copy pointer
+    // z = s;      // copy pointer
+    // for (z = s; *z != '\0'; z++)
+    // {
+    //     printf("HEY %c\n", *z);
+    //     length += 1;
+    // }
+    // second version
+    while (*s != '\0')
+    {
+        s++;
+        length++;
+    }
+    return length;
 }
 
 /*
@@ -20,7 +35,29 @@ int string_length(char *s)
 */
 char *reverse_string(char *rv, char *s)
 {
+    // get length of string
+    int end = 0;
+    char *z; // initialize copy pointer
+    char *z2;
+    z2 = s;
+    z = s; // copy pointer
+    while (*z != '\0')
+    {
+        z++;
+        end++;
+    }
+    // reassign first key to last value
+    char *rv_copy;
+    rv_copy = rv;
+    rv_copy[end + 1] = '\0';
+    while (*z2 != '\0')
+    {
+        end--;
+        rv_copy[end] = *z2;
+        z2++;
+    }
 
+    return rv_copy;
 }
 
 #ifndef TESTING
@@ -37,4 +74,3 @@ int main(void)
     return 0;
 }
 #endif
-    
